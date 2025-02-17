@@ -9,10 +9,9 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <!-- Logo và tên website -->
             <a class="navbar-brand" href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Logo" class="logo">
                 <span class="site-title">Quản Lý Thiết Bị</span>
@@ -32,12 +31,12 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+
     <div class="main-content">
         {% block content %}{% endblock %}
     </div>
 
-    <!-- Footer -->
+
     <footer>
         © 2025 Quản Lý Thiết Bị - Tất cả các dòng máy được bảo lưu.
     </footer>
