@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Trang chủ - Quản lý Thiết Bị{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-container">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Quản Lý Thiết Bị Máy Tính</h1>
+        <p class="hero-subtitle">Giải pháp quản lý thiết bị máy tính tối ưu cho doanh nghiệp</p>
+        <a href="{{ url_for('index') }}" class="btn btn-warning btn-lg">Xem danh sách thiết bị</a>
+    </div>
+</div>
+
+<!-- Danh sách sản phẩm mẫu -->
+<div class="container mt-5">
+    <h2 class="text-center">Các thiết bị tiêu biểu</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/lap1.png') }}" class="card-img-top" alt="Laptop Asus Tuf Gaming">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Laptop Asus Tuf Gaming</h5>
+                    <p class="card-text">Hiệu năng mạnh mẽ, màn hình sắc nét.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/lap2.jpg') }}" class="card-img-top" alt="MacBook Pro M2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">MacBook Pro M2</h5>
+                    <p class="card-text">Hiệu suất cao, tối ưu cho công việc sáng tạo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/lap3.jpg') }}" class="card-img-top" alt="Lenovo ThinkPad X1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Lenovo ThinkPad X1</h5>
+                    <p class="card-text">Thiết kế bền bỉ, pin lâu dài.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

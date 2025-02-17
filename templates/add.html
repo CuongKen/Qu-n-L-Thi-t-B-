@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Thêm Thiết Bị{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Thêm Thiết Bị</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label>Tên thiết bị</label>
+            <input type="text" class="form-control" name="device_name" required>
+        </div>
+        <div class="mb-3">
+            <label>Cấu hình</label>
+            <input type="text" class="form-control" name="specifications" required>
+        </div>
+        <div class="mb-3">
+            <label>Hãng</label>
+            <input type="text" class="form-control" name="brand" required>
+        </div>
+        <div class="mb-3">
+            <label>Vị trí</label>
+            <input type="text" class="form-control" name="location" required>
+        </div>
+        <div class="mb-3">
+            <label>Trạng thái</label>
+            <select class="form-control" name="status">
+                <option value="Hoạt động">Hoạt động</option>
+                <option value="Hỏng">Hỏng</option>
+                <option value="Đang sửa chữa">Đang sửa chữa</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Ảnh thiết bị</label>
+            <input type="file" class="form-control" name="image" id="imageUpload" accept="image/*">
+            <div class="mt-2">
+                <img id="imagePreview" src="#" alt="Ảnh xem trước" style="display: none; width: 150px; border-radius: 5px;">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("imageUpload").addEventListener("change", function(event) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const preview = document.getElementById("imagePreview");
+            preview.src = reader.result;
+            preview.style.display = "block";
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    });
+</script>
+{% endblock %}

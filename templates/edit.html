@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Chỉnh sửa Thiết bị{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Chỉnh sửa Thiết bị</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Tên thiết bị</label>
+            <input type="text" class="form-control" name="device_name" value="{{ computer.device_name }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cấu hình</label>
+            <input type="text" class="form-control" name="specifications" value="{{ computer.specifications }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Hãng</label>
+            <input type="text" class="form-control" name="brand" value="{{ computer.brand }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Vị trí</label>
+            <input type="text" class="form-control" name="location" value="{{ computer.location }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Trạng thái</label>
+            <select class="form-control" name="status">
+                <option value="Hoạt động" {% if computer.status == "Hoạt động" %}selected{% endif %}>Hoạt động</option>
+                <option value="Hỏng" {% if computer.status == "Hỏng" %}selected{% endif %}>Hỏng</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Lưu thay đổi</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
+{% endblock %}
